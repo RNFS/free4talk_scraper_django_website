@@ -1,5 +1,5 @@
+ 
 import requests
-from ..models import User
 
 
 class JsonRequest():
@@ -31,26 +31,22 @@ class ParsedData():
         try:
             for room in self.__data["data"]:
                 for user in self.__data["data"][room]["clients"] :
-                    self.num_users += 1
-                    User.name = user["name"]
-                    User.id = user["id"]
-                    User.followers = user["followers"]
-                    User.following = user["following"]
-                    User.friends = user["friends"]
-                    User.avatar_url = user["avatar"]
-                    User.save()
+                    # you can user["id"], user["avatat"], user["friends"] and so on 
+                    print(user["name"])
+                   
             return True
         except: 
             return False 
+
     def __str__(self):     
         return F"{self.num_users}"
 
-def driver():
+def controller():
     data = ParsedData()
     if data.status == 200:
-        if checker := data.save_data():
+        if data.save_data():
             return "OK"
     return "False"
 
 if __name__ == "__main__" :
-    print(driver())
+    print(controller())
