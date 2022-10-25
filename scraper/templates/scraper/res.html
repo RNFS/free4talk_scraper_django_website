@@ -1,0 +1,18 @@
+{% extends "scraper/layout.html" %}
+
+{% block body%}
+
+    {% if users %}
+        <h2> similer data found in the database </h2>
+        <br>
+        <br>
+        {% for user in users %}
+            <h4> Naem: {{user.name}}, ID : {{user.user_id}}, Followers: {{user.followers}}, Follwing: {{user.following}}, Friends: {{user.friends}}, Last Time Seen: {{user.time}} </h4>
+            <br>
+            {% endfor %}
+    {% endif %}
+    
+    {% if user %}
+        <h2> Naem: {{user.name}}, ID : {{user.user_id}}, Followers: {{user.followers}}, Follwing: {{user.following}}, Friends: {{user.friends}}, Last Time Seen: {{user.time}} </h2>
+    {% endif %}
+{% endblock %}

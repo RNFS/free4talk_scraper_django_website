@@ -1,0 +1,16 @@
+{% extends "scraper/layout.html" %}
+
+
+{% block body %}
+<h2>you can search by only the user name or just user id 
+    <h1>if possibale you can search with both name and id to get accurate results.
+
+     
+</h2>
+<form action="{% url 'scraper:search' %}" method="post">
+    {% csrf_token %}
+    {{user_id}}
+    {{user_name}}
+    <button type="submit">Search</button>
+</form>    
+{% endblock %}

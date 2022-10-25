@@ -5,6 +5,8 @@ from . import views
 app_name = "scraper"  
 
 urlpatterns = [
+    path("", views.index, name="index"),
     path('update-db', views.update_db, name='update_db'),
-    path("index", views.index, name="index")
+    path("search", views.search, name="search")
+
 ]

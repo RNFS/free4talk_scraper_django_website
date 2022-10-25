@@ -5,11 +5,15 @@
 {% endblock%}
     
 {% block nav %}
-    <a href="{% url 'scraper:update_db' %}">update db</a>
+     <h5><a href="{% url 'scraper:update_db' %}">update db</a></h5>
+     <h5><a href="{% url 'scraper:search' %}">Search</a></h5>
+
 {% endblock %}
 
 {% block body %}
+<div> 
 <h3>
     for now we have {{users_num}} users in our database
+</div>
 </h3>
 {% endblock %}
