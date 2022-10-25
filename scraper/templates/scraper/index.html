@@ -1,0 +1,15 @@
+{% extends "scraper/layout.html" %}
+
+{% block title%}
+    Index Page
+{% endblock%}
+    
+{% block nav %}
+    <a href="{% url 'scraper:update_db' %}">update db</a>
+{% endblock %}
+
+{% block body %}
+<h3>
+    for now we have {{users_num}} users in our database
+</h3>
+{% endblock %}
