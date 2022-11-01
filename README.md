@@ -1,7 +1,7 @@
-# free4talk_scraper_website using django as the backend framework
+# free4talk scraper website using Django for Backend 
+- when going to url/update it scrapes users data from free4talk and update the database add new users and    update existing users info
 
-## still in progress, Not Finshed Yet 
-- add need user austh sys so user can log in and out and data will showed to only auth users (logged in usrs)
-- add search field << 90% done>>
-- add a form to add user manually
- 
+got to url(http://127.0.0.1:8000/)/search 
+- you can search the scraped data (stored in SQL databaes ) by the user name or user id or both 
+- you will get all the available data for that query 
+
