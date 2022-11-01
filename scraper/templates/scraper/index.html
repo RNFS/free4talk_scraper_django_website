@@ -1,15 +1,16 @@
 {% extends "scraper/layout.html" %}
 
-{% block title%}
+{% block title %}
     Index Page
-{% endblock%}
+{% endblock %}
     
 {% block nav %}
-     <h5><a href="{% url 'scraper:update_db' %}">update db</a></h5>
-     <h5><a href="{% url 'scraper:search' %}">Search</a></h5>
+<div class="container"> 
+     <h5> <a href="{% url 'scraper:update_db' %}"> click here to update the database it might take time </a></h5>
+     <h5><a href="{% url 'scraper:search' %}">click here to Search</a></h5>
 
 {% endblock %}
-
+<h1>Index Page !</h1>
 {% block body %}
 <div> 
 <h3>

@@ -33,8 +33,7 @@ def search(request):
 
             try:
                 user = models.User.objects.get(Q(name=user_name) & Q(user_id=user_id)) 
-                return render(request, "scraper/res.html", {"user": user})
-            
+                return render(request, "scraper/res.html", {"user_data": user})
             
             except(models.User.DoesNotExist, TypeError):
                 
@@ -49,3 +48,9 @@ def search(request):
             return render(request, "scraper/search.html", {"user_id":UserId, "user_name": UserName})
 
     return render(request, "scraper/search.html", {"user_id":UserId, "user_name": UserName})        
+
+
+
+def delete(request):
+    ...
+    #TODO

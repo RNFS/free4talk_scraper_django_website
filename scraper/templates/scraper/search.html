@@ -2,15 +2,30 @@
 
 
 {% block body %}
-<h2>you can search by only the user name or just user id 
-    <h1>if possibale you can search with both name and id to get accurate results.
+<br>
+<br>
+<div class="container">
+    <h5> <a href="{% url 'scraper:index' %}"> Index Page </a></h5>
+    <h5> <a href="{% url 'scraper:update_db' %}"> click here to update the database it might takea few seconds </a></h5>
 
+<h2>you can search by only the user name or just user id </h2>
+<br>
+<h4>if possibale you can search with both name and id to get accurate results. </h4>
+
+<br>
+<h4> if you have only the name or only the user_id enter it and fill the other field with 0 or any arg</h4>
      
-</h2>
+<br>
+
 <form action="{% url 'scraper:search' %}" method="post">
+    <div class="mb-3">
+
     {% csrf_token %}
     {{user_id}}
     {{user_name}}
-    <button type="submit">Search</button>
+    <button type="submit" class="btn btn-primary">Search</button>
+        </div>
 </form>    
 {% endblock %}
+
+</div>

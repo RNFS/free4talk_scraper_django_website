@@ -1,6 +1,7 @@
 {% extends "scraper/layout.html" %}
 
 {% block body%}
+<div class="container">
 
     {% if users %}
         <h2> similer data found in the database </h2>
@@ -11,8 +12,13 @@
             <br>
             {% endfor %}
     {% endif %}
-    
-    {% if user %}
-        <h2> Naem: {{user.name}}, ID : {{user.user_id}}, Followers: {{user.followers}}, Follwing: {{user.following}}, Friends: {{user.friends}}, Last Time Seen: {{user.time}} </h2>
+    <h5><a href="{% url 'scraper:search' %}">click here to Search</a></h5>
+    <h5> <a href="{% url 'scraper:index' %}"> Index Page </a></h5>
+    <h5> <a href="{% url 'scraper:update_db' %}"> click here to update the database it might takea few seconds </a></h5>
+        
+
+    {% if user_data %}
+        <h2> Naem: {{user_data.name}}, ID : {{user_data.user_id}}, Followers: {{user_data.followers}}, Follwing: {{user_data.following}}, Friends: {{user_data.friends}}, Last Time Seen: {{user_data.time}} </h2>
     {% endif %}
+</div>
 {% endblock %}
