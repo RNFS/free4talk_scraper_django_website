@@ -8,7 +8,9 @@
         <br>
         <br>
         {% for user in users %}
-            <h4> Naem: {{user.name}}, ID : {{user.user_id}}, Followers: {{user.followers}}, Follwing: {{user.following}}, Friends: {{user.friends}}, Last Time Seen: {{user.time}} </h4>
+            <h4> Naem: {{user.name}} <h4>
+                <img src="{{user.avatar_url}}">
+            <h4>ID : {{user.user_id}}, Followers: {{user.followers}}, Follwing: {{user.following}}, Friends: {{user.friends}}, Last Time Seen: {{user.time}} </h4>
             <br>
             {% endfor %}
     {% endif %}
@@ -18,7 +20,9 @@
         
 
     {% if user_data %}
-        <h2> Naem: {{user_data.name}}, ID : {{user_data.user_id}}, Followers: {{user_data.followers}}, Follwing: {{user_data.following}}, Friends: {{user_data.friends}}, Last Time Seen: {{user_data.time}} </h2>
+        <h2> Naem: {{user_data.name}} <h2>
+            <img src="{{user_data.avatar_url}}">
+        </h2> ID : {{user_data.user_id}}, Followers: {{user_data.followers}}, Follwing: {{user_data.following}}, Friends: {{user_data.friends}}, Last Time Seen: {{user_data.time}} </h2>
     {% endif %}
 </div>
 {% endblock %}

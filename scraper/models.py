@@ -56,6 +56,7 @@ class ParsedData():
                         x.followers = user["followers"]
                         x.following = user["following"]
                         x.friends = user["friends"]
+                        x.avatar = user["avatar"]
                         x.time=timezone.now()
                         x.save()
                     # if user not found then add it to the database                        
