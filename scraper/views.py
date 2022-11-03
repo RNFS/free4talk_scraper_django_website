@@ -12,9 +12,8 @@ def update_db(request):
     data = models.JsonRequest.get_json_data()
     ob = models.ParsedData(data)
     if ob.save_data():
-        new_users = ob.num_users 
-        content = f"data stored in the database successfully, added {new_users} new users"
-        return render(request, "scraper/update_db.html", {"content": content})
+        users_num = models.User.objects.count()
+        return render(request, "scraper/update_db.html", {"new_users": ob.num_users, "users_updated":users_num})
     return HttpResponse("503")        
 
 
@@ -54,3 +53,9 @@ def search(request):
 def delete(request):
     ...
     #TODO
+
+def reg(request):
+    if request.method == "POST":
+        ...
+        
+    return render(request, "reg.html")    

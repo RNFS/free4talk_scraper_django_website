@@ -8,12 +8,14 @@
 <div class="container"> 
      <h5> <a href="{% url 'scraper:update_db' %}"> click here to update the database it might take time </a></h5>
      <h5><a href="{% url 'scraper:search' %}">click here to Search</a></h5>
-
+</div>
 {% endblock %}
-<h1>Index Page !</h1>
+
 {% block body %}
-<div> 
-<h3>
+<div class="container"> 
+    <h1>Index Page !</h1>
+
+    <h3>
     for now we have {{users_num}} users in our database
 </div>
 </h3>

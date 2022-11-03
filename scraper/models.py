@@ -53,6 +53,7 @@ class ParsedData():
                     # if user found then update his thier data
                     try:
                         x = User.objects.get(user_id=user["id"])
+                        x.name = user["name"]
                         x.followers = user["followers"]
                         x.following = user["following"]
                         x.friends = user["friends"]
